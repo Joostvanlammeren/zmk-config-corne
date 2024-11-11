@@ -59,10 +59,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q                  &kp W                  &kp E                  &kp R                  &kp T    &kp Y       &kp U      &kp I      &kp O    &kp P          &kp SEMICOLON
-&kp TAB         &kp A                  &kp S                  &kp D                  &kp F                  &kp G    &kp H       &kp J      &kp K      &kp L    &kp BACKSPACE  &kp APOS
-&kp LEFT_SHIFT  &homerow_mods LG(Z) Z  &homerow_mods LG(X) X  &homerow_mods LG(C) C  &homerow_mods LG(V) V  &kp B    &kp N       &kp M      &kp COMMA  &kp DOT  &kp SLASH      &trans
-                                                              &kp LCMD               &kp SPACE              &mo 2    &kp RETURN  &kp SPACE  &none
+&kp ESC         &kp Q                  &kp W                  &kp E                  &kp R                  &kp T    &kp Y       &kp U   &kp I      &kp O    &kp P          &kp SEMICOLON
+&kp TAB         &kp A                  &kp S                  &kp D                  &kp F                  &kp G    &kp H       &kp J   &kp K      &kp L    &kp BACKSPACE  &kp APOS
+&kp LEFT_SHIFT  &homerow_mods LG(Z) Z  &homerow_mods LG(X) X  &homerow_mods LG(C) C  &homerow_mods LG(V) V  &kp B    &kp N       &kp M   &kp COMMA  &kp DOT  &kp SLASH      &trans
+                                                              &kp LCMD               &kp SPACE              &mo 2    &kp RETURN  &trans  &none
             >;
         };
 
