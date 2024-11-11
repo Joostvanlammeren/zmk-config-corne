@@ -34,72 +34,6 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
         };
 
-        nvim_save_exit: nvim_save_exit {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NVIM_SAVE_EXIT";
-            #binding-cells = <0>;
-            bindings = <&nvim_save>, <&nvim_save_quit>, <&nvim_save_quit_all>;
-        };
-
-        resize_browser: resize_browser {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RESIZE_BROWSER";
-            #binding-cells = <0>;
-            bindings = <&kp LG(MINUS)>, <&kp LG(PLUS)>;
-        };
-
-        tapdance_space_colon: tapdance_space_colon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAPDANCE_SPACE_COLON";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp COLON>;
-        };
-
-        tapdance_cmd_cmdbacktick: tapdance_cmd_cmdbacktick {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAPDANCE_CMD_CMDBACKTICK";
-            #binding-cells = <0>;
-            bindings = <&kp LCMD>, <&kp LG(GRAVE)>;
-        };
-
-        tapdance_layer_switch: tapdance_layer_switch {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAPDANCE_LAYER_SWITCH";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&to 2>;
-        };
-
-        tapdance_numbers_layer: tapdance_numbers_layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAPDANCE_NUMBERS_LAYER";
-            #binding-cells = <0>;
-            bindings = <&mo 3>, <&mo 3>;
-        };
-
-        homerow_amethyst: homerow_amethyst {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_AMETHYST";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <14 15 16 18 21 20 19 31 30 25 7 8 5>;
-        };
-
-        homerow_navigation_layer: homerow_navigation_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_NAVIGATION_LAYER";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <21 20 19 7 8 9 15 16 38 36>;
-        };
-
         homerow_mods: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -112,91 +46,7 @@
         };
     };
 
-    macros {
-        browser_reset_size: browser_reset_size {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(PLUS) &kp LG(NUMBER_0)>;
-            label = "BROWSER_RESET_SIZE";
-        };
-
-        nvim_save: nvim_save {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp COLON &kp W &kp RETURN>;
-            label = "NVIM_SAVE";
-        };
-
-        nvim_save_quit: nvim_save_quit {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp COLON &kp W &kp Q &kp RETURN>;
-            label = "NVIM_SAVE_QUIT";
-        };
-
-        nvim_save_quit_all: nvim_save_quit_all {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp COLON &kp W &kp Q &kp A &kp RETURN>;
-            label = "NVIM_SAVE_QUIT_ALL";
-        };
-
-        harpoon1: harpoon1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE &kp NUMBER_1>;
-            label = "HARPOON1";
-            wait-ms = <5>;
-        };
-
-        harpoon2: harpoon2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE &kp NUMBER_2>;
-            label = "HARPOON2";
-            wait-ms = <5>;
-        };
-
-        harpoon3: harpoon3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE &kp NUMBER_3>;
-            label = "HARPOON3";
-            wait-ms = <5>;
-        };
-
-        harpoon4: harpoon4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE &kp NUMBER_4>;
-            label = "HARPOON4";
-            wait-ms = <5>;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        mo-layer-2 {
-            bindings = <&mo 2>;
-            key-positions = <15 16>;
-        };
-
-        esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <19 20>;
-        };
-
-        tmux {
-            bindings = <&kp LC(B)>;
-            key-positions = <19 21>;
-        };
-
-        numbers-layer {
-            bindings = <&mo 3>;
-            key-positions = <14 15>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -209,10 +59,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q                          &homerow_mods LG(W) W      &kp E                           &homerow_mods LG(LS(R)) R  &kp T             &homerow_mods LC(Y) Y  &kp U      &homerow_mods LG(LA(I)) I  &kp O    &kp P             &kp DELETE
-&kp TAB         &homerow_navigation_layer 3 A  &homerow_amethyst LG(S) S  &homerow_mods LA(LEFT_SHIFT) D  &homerow_mods LCMD F       &kp G             &kp H                  &kp J      &kp K                      &kp L    &kp BACKSPACE     &kp LC(B)
-&kp LEFT_SHIFT  &homerow_mods LG(Z) Z          &homerow_mods LG(X) X      &homerow_mods LG(C) C           &homerow_mods LG(V) V      &kp B             &kp N                  &kp M      &kp COMMA                  &kp DOT  &kp LA(NUMBER_1)  &trans
-                                                                          &kp LCTRL                       &tapdance_layer_switch     &kp LEFT_SHIFT    &kp RETURN             &kp SPACE  &tapdance_cmd_cmdbacktick
+&kp ESC         &kp Q                  &kp W                  &kp E                  &kp R                  &kp T    &kp Y       &kp U      &kp I      &kp O    &kp P          &kp SEMICOLON
+&kp TAB         &kp A                  &kp S                  &kp D                  &kp F                  &kp G    &kp H       &kp J      &kp K      &kp L    &kp BACKSPACE  &kp APOS
+&kp LEFT_SHIFT  &homerow_mods LG(Z) Z  &homerow_mods LG(X) X  &homerow_mods LG(C) C  &homerow_mods LG(V) V  &kp B    &kp N       &kp M      &kp COMMA  &kp DOT  &kp SLASH      &trans
+                                                              &kp LCMD               &kp SPACE              &mo 2    &kp RETURN  &kp SPACE  &none
             >;
         };
 
@@ -224,10 +74,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH              &kp DOLLAR         &kp PERCENT         &kp CARET          &kp MINUS        &kp UNDERSCORE         &kp AMPERSAND     &kp ASTERISK          &browser_reset_size
+&trans  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH              &kp DOLLAR         &kp PERCENT         &kp CARET          &kp AMPERSAND    &kp ASTERISK           &kp MINUS         &kp UNDERSCORE        &trans
 &trans  &kp SLASH        &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE     &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp NON_US_BACKSLASH  &trans
-&trans  &kp TILDE        &kp GRAVE      &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES  &kp EQUAL           &kp PLUS           &kp COLON        &kp SEMICOLON          &kp QUESTION      &kp PIPE              &resize_browser
-                                        &trans                &trans             &trans              &kp F1             &kp F2           &kp F3
+&trans  &kp TILDE        &kp GRAVE      &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES  &kp EQUAL           &kp PLUS           &kp COLON        &kp SEMICOLON          &kp QUESTION      &kp PIPE              &none
+                                        &trans                &trans             &trans              &trans             &trans           &trans
             >;
         };
 
@@ -239,19 +89,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LG(LEFT)    &kp LA(LEFT_ARROW)  &kp LA(RIGHT)  &kp LG(RIGHT_ARROW)  &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN            &kp UP_ARROW   &kp RIGHT            &kp BACKSPACE  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &harpoon1           &harpoon2      &harpoon3            &harpoon4      &trans
-                        &trans  &trans  &trans    &to 0           &kp SPACE           &trans
+&trans  &trans          &trans     &trans        &trans    &trans    &trans  &trans    &kp UP_ARROW  &trans     &trans         &trans
+&trans  &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp LCMD  &trans    &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &kp BACKSPACE  &trans
+&trans  &trans          &trans     &trans        &trans    &trans    &trans  &trans    &trans        &trans     &trans         &trans
+                                   &trans        &trans    &trans    &trans  &trans    &trans
             >;
         };
 
         numbers-media {
             bindings = <
-&kp ESC  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT         &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS  &trans
-&trans   &trans                &trans                &trans        &trans            &trans             &kp ASTERISK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH  &trans
-&to 0    &bt BT_SEL 0          &bt BT_SEL 1          &bt BT_SEL 2  &bt BT_SEL 3      &bt BT_CLR         &kp EQUAL     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA  &trans
-                                                     &kp K_MUTE    &kp C_VOL_DN      &kp C_VOLUME_UP    &kp RET       &kp NUMBER_0  &kp NUMBER_0
+&kp ESC  &trans        &trans        &trans        &trans        &trans        &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS  &trans
+&trans   &trans        &trans        &trans        &trans        &trans        &kp ASTERISK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SLASH  &trans
+&trans   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &kp EQUAL     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA  &trans
+                                     &trans        &trans        &trans        &kp RET       &kp NUMBER_0  &kp NUMBER_0
             >;
         };
     };
